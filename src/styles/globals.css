@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-teal: #64ffda;
+  --bg-dark: #0f1419;
+}
+
+/* Custom Cursor */
+* {
+  cursor: none;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--neon-teal);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease;
+}
+
+.custom-cursor.hover {
+  transform: scale(1.5);
+}
+
+/* Glitch Effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 var(--neon-teal);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -1px 0 var(--neon-teal);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip: rect(20px, 9999px, 21px, 0); }
+  20% { clip: rect(42px, 9999px, 44px, 0); }
+  40% { clip: rect(56px, 9999px, 58px, 0); }
+  60% { clip: rect(72px, 9999px, 74px, 0); }
+  80% { clip: rect(94px, 9999px, 96px, 0); }
+  100% { clip: rect(115px, 9999px, 117px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(12px, 9999px, 14px, 0); }
+  20% { clip: rect(32px, 9999px, 34px, 0); }
+  40% { clip: rect(54px, 9999px, 56px, 0); }
+  60% { clip: rect(70px, 9999px, 72px, 0); }
+  80% { clip: rect(89px, 9999px, 91px, 0); }
+  100% { clip: rect(108px, 9999px, 110px, 0); }
+}
+
+/* Hover Effects */
+.hover-glow {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hover-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--neon-teal);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 15px var(--neon-teal);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-teal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4cd9b9;
+}
+
+/* Terminal-like text animation */
+.typing {
+  border-right: 2px solid var(--neon-teal);
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: var(--neon-teal) }
+}
+
+/* Custom background patterns */
+.circuit-pattern {
+  background-image: radial-gradient(#ffffff08 1px, transparent 1px);
+  background-size: 20px 20px;
+}
