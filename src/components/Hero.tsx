@@ -19,7 +19,7 @@ export function Hero() {
         <div className="max-w-4xl mx-auto px-4 pt-16">
           <div className="text-center">
             <div className="mb-8 relative">
-              <Terminal className="text-[#64ffda] w-16 h-16 mx-auto mb-6 hover-glow p-2" />
+              <img src="/src/images/p-img.png" alt="Profile Image" className="w-20 h-20 mx-auto mb-6 hover-glow p-2" />
             </div>
             <h1 ref={titleRef} className="text-5xl font-bold text-white mb-6 glitch">
               Hi, I'm <span className="text-[#64ffda]">Pratik</span>
