@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 export function MatrixRain() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -23,6 +23,9 @@ export function MatrixRain() {
     }
 
     function draw() {
+      if (!ctx) return;
+      if (!canvas) return;
+
       ctx.fillStyle = 'rgba(15, 20, 25, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -33,7 +36,7 @@ export function MatrixRain() {
         const text = chars[Math.floor(Math.random() * chars.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (canvas && drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
 
@@ -44,8 +47,10 @@ export function MatrixRain() {
     const interval = setInterval(draw, 33);
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (canvasRef.current) {
+        canvasRef.current.width = window.innerWidth;
+        canvasRef.current.height = window.innerHeight;
+      }
     };
 
     window.addEventListener('resize', handleResize);

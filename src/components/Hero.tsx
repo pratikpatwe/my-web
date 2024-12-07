@@ -25,13 +25,13 @@ export function Hero() {
               Hi, I'm <span className="text-[#64ffda]">Pratik</span>
             </h1>
             <div className="typing-container overflow-hidden">
-              <div className="flex flex-col items-center justify-center space-y-2 mb-6 md:flex-row md:space-x-2 typing">
-                <div className="flex items-center">
-                  <Code2 className="text-[#64ffda] md:block hidden" size={20} />
-                  <p className="text-xl text-gray-300 ml-2">
-                    Full Stack Developer & Tech Innovator
-                  </p>
+              <div className="flex items-center justify-center space-x-2 mb-6 typing">
+                <div className="hidden md:block">
+                  <Code2 className="text-[#64ffda]" size={20} />
                 </div>
+                <p className="text-xl text-gray-300">
+                  Full Stack Developer & Tech Innovator
+                </p>
               </div>
             </div>
             <p className="text-gray-400 mb-8 leading-relaxed max-w-2xl mx-auto">

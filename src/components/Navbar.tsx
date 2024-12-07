@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Github, Linkedin, Mail, Terminal } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Terminal, TwitterIcon } from 'lucide-react';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -21,14 +21,14 @@ export function Navbar() {
               <a href="#projects" className="text-gray-300 hover:text-[#00f3ff] transition-colors">Projects</a>
               <a href="#contact" className="text-gray-300 hover:text-[#00f3ff] transition-colors">Contact</a>
               <div className="flex space-x-4 ml-4">
-                <a href="https://github.com/pratik" className="text-gray-300 hover:text-[#00f3ff] transition-colors">
+                <a href="https://github.com/pratikpatwe/" className="text-gray-300 hover:text-[#00f3ff] transition-colors">
                   <Github size={20} />
                 </a>
-                <a href="https://linkedin.com/in/pratik" className="text-gray-300 hover:text-[#00f3ff] transition-colors">
+                <a href="https://www.linkedin.com/in/pratik-patwe-7741a0255" className="text-gray-300 hover:text-[#00f3ff] transition-colors">
                   <Linkedin size={20} />
                 </a>
-                <a href="mailto:pratik@example.com" className="text-gray-300 hover:text-[#00f3ff] transition-colors">
-                  <Mail size={20} />
+                <a href="https://x.com/PatwePrati11520" className="text-gray-300 hover:text-[#00f3ff] transition-colors">
+                  <TwitterIcon size={20} />
                 </a>
               </div>
             </div>
@@ -51,14 +51,14 @@ export function Navbar() {
             <a href="#projects" className="block px-3 py-2 text-gray-300 hover:text-[#00f3ff]">Projects</a>
             <a href="#contact" className="block px-3 py-2 text-gray-300 hover:text-[#00f3ff]">Contact</a>
             <div className="flex space-x-4 px-3 py-2">
-              <a href="https://github.com/pratik" className="text-gray-300 hover:text-[#00f3ff]">
+              <a href="https://github.com/pratikpatwe/" className="text-gray-300 hover:text-[#00f3ff]">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/pratik" className="text-gray-300 hover:text-[#00f3ff]">
+              <a href="https://www.linkedin.com/in/pratik-patwe-7741a0255" className="text-gray-300 hover:text-[#00f3ff]">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:pratik@example.com" className="text-gray-300 hover:text-[#00f3ff]">
-                <Mail size={20} />
+              <a href="https://x.com/PatwePrati11520" className="text-gray-300 hover:text-[#00f3ff]">
+                <TwitterIcon size={20} />
               </a>
             </div>
           </div>
